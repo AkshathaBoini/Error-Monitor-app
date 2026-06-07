@@ -11,7 +11,7 @@ function App() {
 
   const fetchErrors = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/errors');
+     const response = await fetch('https://error-monitor-app.onrender.com/api/errors');
       const data = await response.json();
       setErrors(data);
       setLoading(false);
@@ -22,7 +22,7 @@ function App() {
   };
 
   const resolveError = async (id) => {
-    await fetch(`http://localhost:8080/api/errors/${id}/resolve`, {
+    await fetch(`https://error-monitor-app.onrender.com/api/errors/${id}/resolve`, {
       method: 'PUT'
     });
     fetchErrors();
